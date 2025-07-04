@@ -12,3 +12,26 @@ _debe dar ok el test automatico_
 ```plaintext
 cargo test
 ```
+
+
+**comandos para probar la solución al reto**
+```plaintext
+stellar contract build
+```
+
+
+```plaintext
+stellar contract deploy `
+ --wasm target\wasm32v1-none\release\calculadora.wasm `
+  --source <alias> `
+  --network testnet `
+  --alias calculadora
+```
+
+```plaintext
+stellar contract invoke --id <contract_id> --source <alias> --network testnet -- sumar --a 1 --b 2
+stellar contract invoke --id <contract_id> --source <alias> --network testnet -- resultado_anterior 
+stellar contract invoke --id <contract_id> --source <alias> --network testnet -- sumar --a 11 --b 2
+stellar contract invoke --id <contract_id> --source <alias> --network testnet -- resultado_anterior
+```
+
