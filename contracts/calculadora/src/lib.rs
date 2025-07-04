@@ -12,12 +12,15 @@ impl Contract {
     
     pub fn sumar(env: Env, a:i128, b:i128) -> i128 {
       //Implementar función que sume dos números
-      return 30;
+      let suma:i128 = a+b;
+      env.storage().instance().set(&RESULTADO, &suma);
+      return suma;
     }
 
     pub fn resultado_anterior(env: Env) -> i128 {
            //Implementar función que retorne el valor anterior
-            return 30;
+           let last_result = env.storage().instance().get(&RESULTADO).unwrap_or(0);
+          return last_result;
     }
 }
 
